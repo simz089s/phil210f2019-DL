@@ -1,8 +1,12 @@
 
 
 try:
-    n = int(input("How many atomic sentences? "))
-    S = input("Input sentence: ")
+    #n = int(input("How many atomic sentences? "))
+    #S = input("Input sentence: ")
+    ############################## CUSTOM ##############################
+    n = 2
+    S = "( P → Q ) ↔ ( ¬Q → ¬P )"
+    ####################################################################
 
     print()
     [print(" P{} |".format(i+1), end='') for i in range(n)]
@@ -17,11 +21,14 @@ try:
         for j in range(n):
             current_vals.append( (i // (2**j)) % 2 )
             print(' ', current_vals[j], '|', end='')
-        ### CUSTOM ###
+        ############################ CUSTOM ############################
         P = current_vals[0]
         Q = current_vals[1]
         full = not P or Q == (not not Q) or not P
-        print("     {}  {}  {} {} {}".format(not P or Q, full, not Q, not not Q or not P, not P).replace("True", 'T').replace("False", 'F'))
-        ##############
+        print("    {}   {}   {}    {}    {}".format(not P or Q, full, not Q, not not Q or not P, not P)
+              .replace("True", 'T')
+              .replace("False", 'F'))
+        ################################################################
 finally:
-    input()
+    #input()
+    print()
