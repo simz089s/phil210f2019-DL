@@ -25,7 +25,8 @@ try:
         P = current_vals[0]
         Q = current_vals[1]
         full = not P or Q == (not not Q) or not P
-        print("    {}   {}   {}    {}    {}".format(not P or Q, full, not Q, not not Q or not P, not P)
+        print("    {}   {}   {}    {}    {}"
+              .format(not P or Q, full, not Q, not not Q or not P, not P)
               .replace("True", 'T')
               .replace("False", 'F'))
         ################################################################
